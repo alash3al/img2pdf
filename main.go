@@ -18,7 +18,7 @@ func main() {
 	fmt.Println("Reading files from (", *src, ") and saving the result as (", *as,")")
 	fmt.Println("-----------------------")
 	pdf := gopdf.GoPdf{}
-	pdf.Start(gopdf.Config{Unit: "pt", PageSize: gopdf.Rect{W: 595.28, H: 841.89}})
+	pdf.Start(gopdf.Config{PageSize: *gopdf.PageSizeA4 })
 	jpgs, _ := filepath.Glob(*src + "/*.jpg")
 	pngs, _ := filepath.Glob(*src + "/*.png")
 	jpegs, _ := filepath.Glob(*src + "/*.jpeg")
